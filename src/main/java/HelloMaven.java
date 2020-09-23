@@ -1,7 +1,7 @@
-import org.json.simple.JSONArray;
-
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.*;
+import org.json.simple.*;
 
 public class HelloMaven {
     public static void main(String[] args) {
@@ -24,7 +24,9 @@ public class HelloMaven {
         lista.add(new Usuario(cedula, nombre, color));
         System.out.println(lista);
 
-
-
+        JSONObject usuarioDetails = new JSONObject();
+        usuarioDetails.put("Nombre", "bla");
+        usuarioDetails.put("Objeto", alejo);
+        System.out.println(usuarioDetails);
     }
 }
