@@ -11,17 +11,24 @@ public class Usuario {
         this.color = color;
     }
 
+    public Usuario(JSONObject toJavaObj){
+        JSONObject usuario = (JSONObject) toJavaObj.get("usuario");
+        Long cedu; cedu = (Long) usuario.get("cedula");
+        this.cedula = cedu.intValue();
+        this.nombre = (String) usuario.get("nombre");
+        this.color = (String) usuario.get("color");
+    }
+
     public JSONObject toJSONObj(){
         JSONObject usuarioDetials = new JSONObject();
-        usuarioDetials.put("Cedula", cedula);
-        usuarioDetials.put("Nombre", nombre);
-        usuarioDetials.put("Color", color);
+        usuarioDetials.put("cedula", cedula);
+        usuarioDetials.put("nombre", nombre);
+        usuarioDetials.put("color", color);
 
         JSONObject usuarioObj = new JSONObject();
         usuarioObj.put("usuario", usuarioDetials);
 
         return usuarioObj;
-
     }
 
     @Override
